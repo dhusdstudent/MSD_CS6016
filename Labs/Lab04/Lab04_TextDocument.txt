@@ -1,0 +1,38 @@
+PART 3 
+
+Get the Titles of all books by <Author>
+[SELECT title FROM titles WHERE author = 'Simmons';]
+
+Get Serial numbers of all books by <Author>
+[SELECT serial  FROM inventory INNER JOIN titles ON inventory.isbn = titles.isbn  WHERE author = 'Simmons';]
+
+Get the Titles of all books checked out by <Patron’s name>
+[SELECT title FROM titles JOIN inventory ON inventory.isbn = titles.isbn JOIN checkedout ON checkedout.serial = inventory.serial JOIN patrons ON checkedout.cardnum = patrons.cardnum WHERE patrons.name = 'Joe';]
+
+
+Get phone number(s) of anyone with <Title> checked out
+[SELECT phone from phones JOIN checkedout ON checkedout.cardnum = phones.cardnum JOIN inventory ON checkedout.serial = inventory.serial JOIN titles ON titles.isbn = inventory.isbn WHERE titles.title = 'Hyperion';]
+
+PART 4
+
+Find the names of any player with an Elo rating of 2850 or higher:
+[SELECT name FROM players WHERE elo > 2850;]
+
+Find the names of any player who has ever played a game as white.
+[SELECT name FROM players JOIN games ON players.pID = Games.blackplayer;]
+
+Find the names of any player who has ever won a game as white.
+[SELECT name FROM players JOIN games ON players.pID = games.whiteplayer WHERE result = '1-0';]
+
+Find the names of any player who played any games in 2018.
+[SELECT players.name FROM players JOIN games ON players.pID = games.whiteplayer OR players.pID = games.blackplayer JOIN events ON events.eid = games.eid WHERE date = 2018;
+
+
+Find the names and dates of any event in which Magnus Carlsen lost a game.
+[SELECT events.name, events.year FROM players JOIN games ON players.pID = games.whiteplayer OR players.pID = games.blackplayer JOIN events ON events.eid = games.eid WHERE games.whiteplayer = 1 AND result = '0-1' OR games.blackplayer = 1 AND result = '1-0';]
+
+
+Find the names of all opponents of Magnus Carlsen. An opponent is someone who he has played a game against. Hint: Both Magnus and his opponents could play as white or black.
+
+[SELECT O.name FROM Players M JOIN games ON M.pID = games.whiteplayer JOIN Players O ON O.pID = Games.blackplayer WHERE M.Name = 'Magnus Carlsen' UNION SELECT O.Name FROM Players M JOIN Games ON M.pID = Games.whiteplayer JOIN Players O ON O.pID = Games.whiteplayer WHERE M.Name = 'Magnus Carlsen';]
+

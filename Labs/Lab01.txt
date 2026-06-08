@@ -1,0 +1,118 @@
+PT 1.1
+GroceryProduct [ __sku (short)__, name (string), quantity (short), price (real) ]   
+
+PT 1.2
+GroceryProduct [ __sku (short)__, name (string), __aisle (short)__, price (real) ]   
+
+(This is assuming that something like an ‘endcap’ location would have a different aisle code than the aisle itself)
+
+PT 1.3
+Cars(__vin (int)__, __spssn (int)__, make (string), model (string), year (int), color (string)]
+Salesperson (__spssn (int)__, __vin (int)__, name (string)]
+
+(Assuming that a salesperson can also be selling more than one car at a time).
+
+CREATE TABLE Cars (
+	vin INTEGER,
+	spssn INTEGER,
+	make VARCHAR(100),
+	model VARCHAR(100),
+	year INTEGER,
+	color VARCHAR(50),
+	PRIMARY KEY (vin, spssn) 
+);
+
+CREATE TABLE Salesperson(
+	spssn INTEGER,
+	name VARCHAR(255),
+	PRIMARY KEY (spssn)
+);
+
+
+'
+
+
+PT 2
+CREATE TABLE Patrons(
+	Name (string),
+	CardNum (integer) UNIQUE,
+	)
+
+CREATE TABLE PhoneNumbers (
+	Phone (integer),
+	CardNum (integer) UNIQUE,
+)
+
+CREATE TABLE Titles (
+	ISBN (integer) UNIQUE,
+	Title (string),
+	Author (string)
+)
+
+CREATE TABLE Inventory (
+	Serial (integer) UNIQUE,
+	ISBN (integer)
+)
+
+CREATE TABLE CheckedOut (
+	CardNum (integer) UNIQUE,
+	Serial (integer) UNIQUE
+)
+
+
+PT 3
+
+| VIN | Salesperson | Make | Model | Year | Color |
+| -------- | -------- | -------- | -------- |
+| 123456789 | Arnold | Toyota | Tacoma | 2008 | Red |
+| 123456789 | Hannah | Toyota | Tacoma | 2008 | Red |
+| 987654321 | Arnold | Toyota | Tacoma | 1999 | Green |
+| 111111111 | Steve | Tesla | Model 3 | 2018 | White |
+| 232323232 | NULL | Subaru | WRX | 2016 | Blue |
+| 999999999 | Hannah | Ford | F150 | 2004 | Red |
+
+INSERT INTO Cars VALUES (1111, 2478, ‘Toyota’, ‘Tacoma’, 2008, ‘Red’);
+
+INSERT INTO Cars VALUES  (1111, 4622, ‘Toyota’, ’Tacoma’, 2008, ‘Red’);
+INSERT INTO Cars VALUES  (2222, 2478, ‘Toyota’, ‘Tacoma’, 1999, ‘Green’);
+INSERT INTO Cars VALUES (3333, 7431,’Tesla’, ‘Model3’, 2018, ‘White’);
+INSERT INTO Cars VALUES (4444, 0, ‘Subaru’, ‘WRX’, 2016, ‘Blue’);
+INSERT INTO Cars VALUES (5555, 4622, ‘Ford’, ‘F150’, 2004, ‘Red’);
+
+
+INSERT INTO Salesperson (spssn, name)
+VALUES (2478, ‘Arnold’);
+
+    (4622, ‘Hannah’),
+    (7431, ‘Steve’);
+
+
+PT 4
+
+| Attribute Sets | Superkey? | Proper Subsets | Key? |
+| -------- | -------- | -------- | -------- |
+| {A1} | No | {} | No |
+| {A2} | No | {} | No |
+| {A3} | No | {} | No |
+| {A1, A2} | Yes | {A1}, {A2} | Yes |
+| {A1, A3} | No | {A1), {A3} | No |
+| {A2, A3} | No | {A2}, {A3} | No |
+| {A1, A2, A3} | Yes | {A1}, {A2}, {A3}, {A1, A2}, {A1, A3}, {A2, A3} | No |
+
+
+PT 5
+
+Q: If {x} is a super key, then any set containing x is also a super key.
+A. False
+
+Q. If {x} is a key, then any set containing x is also a key.
+A. True
+
+Q. If {x} is a key, then {x} is also a super key.
+A. True
+
+Q. If {x, y, z} is a super key, then one of {x}, {y}, or {z} must also be a super key.
+A. False (it’s the combination that matters, not the individual column).
+
+Q. If an entire schema consists of the set {x, y, z} and if none of the proper subsets {x, y, z} are keys, then {x, y, z} must be a key.
+A. True
