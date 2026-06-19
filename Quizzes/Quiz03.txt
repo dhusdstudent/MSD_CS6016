@@ -1,0 +1,13 @@
+﻿1. This prompt returns the names from the patrons table of the specific entries where their associated card numbers don’t match any of the entries from the checkedout table. Meaning it returns the names of the patrons who don’t have any book [presumably] checked out.
+
+2. This prompt returns the [names of] the authors from the titles table, and uses the columns of matching information from the inventory and checkedout table to ultimately also calculate a count of how many times that particular author appears on the table. Meaning it returns the name of the author plus the number of titles they’ve written which are stocked at the library.
+
+3. Using the MIN(serial) parameter is not enough to get the prompt to show all of the information with only the lowest serial number. 
+
+What would be a better way to go about this is to minimize your SELECT parameters to just ‘author, title’ but specifying that author should be DISTINCT. You can then organize the data to your liking, such as by doing ORDER BY author, serial DESC. This would put the serial number that you want to specify at the top, but the DISTINCT will limit the entry to one per author.
+
+4. You’ve established a datasource for storage. Then you’re going through each entry of the students list. You create a command named ‘cmd’ that you link to the datasource to get the gpa of a student (or rather, from the student table, so presumably the name of the student) where the corresponding uID entry is established as the first entry (for the future). Then, at the same time, you’ve got the variable reader, who waits for that gpa return and, upon receiving it, helps translate it into the “gpa” double variable.
+
+If the gpa value is less than 2.5, you use the ‘cmd2’ variable to set the gpa  as the second entry, and both it and the uID (saved as the first entry from earlier) are input into a ‘Probation’ table.
+
+5. I would assume that you could include the parameter for a gpa being 2.5 into your originally query. So as opposed to scrubbing through the table, pulling out each gpa entry, and then comparing it to 2.5, you could perhaps just set the created sql command to something along the lines of “SELECT gpa, uID FROM students WHERE gpa < 2.5.” Then you could go on to add those entries into the probation table.
