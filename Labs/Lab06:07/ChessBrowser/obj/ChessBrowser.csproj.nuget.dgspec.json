@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/demih/School/MSD_CS6016/Labs/Lab06:07/ChessBrowser/ChessBrowser.csproj": {}
+  },
+  "projects": {
+    "/Users/demih/School/MSD_CS6016/Labs/Lab06:07/ChessBrowser/ChessBrowser.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/demih/School/MSD_CS6016/Labs/Lab06:07/ChessBrowser/ChessBrowser.csproj",
+        "projectName": "ChessBrowser",
+        "projectPath": "/Users/demih/School/MSD_CS6016/Labs/Lab06:07/ChessBrowser/ChessBrowser.csproj",
+        "packagesPath": "/Users/demih/.nuget/packages/",
+        "outputPath": "/Users/demih/School/MSD_CS6016/Labs/Lab06:07/ChessBrowser/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/demih/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net10.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net10.0": {
+            "targetAlias": "net10.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "10.0.300"
+      },
+      "frameworks": {
+        "net10.0": {
+          "targetAlias": "net10.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.App.Internal.Assets": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[10.0.9, )",
+              "autoReferenced": true
+            },
+            "Npgsql": {
+              "target": "Package",
+              "version": "[10.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/Users/demih/.dotnet/sdk/10.0.301/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

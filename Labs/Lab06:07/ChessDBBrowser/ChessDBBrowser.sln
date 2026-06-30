@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessDBBrowser", "ChessDBBrowser\ChessDBBrowser\ChessDBBrowser.csproj", "{A8E0C4A4-20A5-4B6F-9033-99746FBDAD31}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessDBBrowser.Sample", "ChessDBBrowser\ChessDBBrowser.Sample\ChessDBBrowser.Sample.csproj", "{82306F68-AD4E-4F1F-AFC1-B78EB13BB404}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChessDBBrowser.Tests", "ChessDBBrowser\ChessDBBrowser.Tests\ChessDBBrowser.Tests.csproj", "{B57CA107-F520-4080-BE17-1BE5744F0CD8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A8E0C4A4-20A5-4B6F-9033-99746FBDAD31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A8E0C4A4-20A5-4B6F-9033-99746FBDAD31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A8E0C4A4-20A5-4B6F-9033-99746FBDAD31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A8E0C4A4-20A5-4B6F-9033-99746FBDAD31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{82306F68-AD4E-4F1F-AFC1-B78EB13BB404}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82306F68-AD4E-4F1F-AFC1-B78EB13BB404}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82306F68-AD4E-4F1F-AFC1-B78EB13BB404}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82306F68-AD4E-4F1F-AFC1-B78EB13BB404}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B57CA107-F520-4080-BE17-1BE5744F0CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B57CA107-F520-4080-BE17-1BE5744F0CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B57CA107-F520-4080-BE17-1BE5744F0CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B57CA107-F520-4080-BE17-1BE5744F0CD8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

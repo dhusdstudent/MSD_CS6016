@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "NWjtGieSezM=",
+  "success": true,
+  "projectFilePath": "/Users/demih/School/MSD_CS6016/Labs/Lab06:07/ChessBrowser/ChessBrowser.csproj",
+  "expectedPackageFiles": [
+    "/Users/demih/.nuget/packages/microsoft.aspnetcore.app.internal.assets/10.0.9/microsoft.aspnetcore.app.internal.assets.10.0.9.nupkg.sha512",
+    "/Users/demih/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/10.0.0/microsoft.extensions.dependencyinjection.abstractions.10.0.0.nupkg.sha512",
+    "/Users/demih/.nuget/packages/microsoft.extensions.logging.abstractions/10.0.0/microsoft.extensions.logging.abstractions.10.0.0.nupkg.sha512",
+    "/Users/demih/.nuget/packages/npgsql/10.0.3/npgsql.10.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

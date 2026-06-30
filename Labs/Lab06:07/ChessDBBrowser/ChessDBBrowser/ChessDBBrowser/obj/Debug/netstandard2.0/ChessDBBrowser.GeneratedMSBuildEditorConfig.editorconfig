@@ -1,0 +1,8 @@
+is_global = true
+build_property.RootNamespace = ChessDBBrowser
+build_property.ProjectDir = /Users/demih/School/MSD_CS6016/Labs/Lab06:07/ChessDBBrowser/ChessDBBrowser/ChessDBBrowser/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 
+build_property.EnableCodeStyleSeverity = 
