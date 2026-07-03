@@ -1,0 +1,51 @@
+1.
+
+CREATE TABLE Building {
+	buildingID INTEGER
+	buildingName VARCHAR(255)
+	PRIMARY KEY (buildingID)
+}
+
+CREATE TABLE Room {
+	roomID INTEGER
+	roomName VARCHAR(255)
+	buildingID INTEGER
+	PRIMARY KEY (roomID)
+}
+
+CREATE TABLE Person {
+	personID INTEGER
+	personName VARCHAR(255)
+	roomsToAccess COLLECTION INTEGER
+	PRIMARY KEY (personID)
+}
+
+CREATE TABLE Navigation {
+	buildingID INTEGER
+	roomID INTEGER
+	distance INTEGER
+	direction VARCHAR(1)
+	PRIMARY KEY (buildingID, roomID)
+}
+
+Theoretically, you could have also gotten to having 4 tables by breaking out a fourth for the ‘Accessibility’ relationship between Person and Room. However, I felt that that was fairly well accounted for by just giving a person a list of roomIDs that they could access; so instead wanted to focus on something that I felt was lacking in the presentation. 
+
+The ‘Room’ class has a variable for ‘Building Navigation’ that is made from a ‘Building’ object. Note that this is not the same variable as ‘Building’ which asks for the identifier of the building where the room resides. In most of the examples we’ve covered in this course, tables don’t often have entries for full objects. So I decided to break this relationship out as the fourth table, instead.
+
+I kept the variables within fairly flexible, as there’s a lot of different ways the table author may want to account for the ‘navigation’ relationship. But overall, I tried to approximate what one might want to keep track of in regards to on-campus navigation.
+
+
+
+2.
+
+I think using the ‘database tables first’ approach can be helpful in the sense that it keeps your table entries simplified. I’m not absolutely certain that you CANNOT include objects as column entries on a table, but it seems like, even if you can, it’s a surefire way to add complexity. And while sometimes complexity is called for, it might be wise to try the simplest approach, first.
+
+By creating the database tables first, you’re forced to approach the data in terms of individual variables, because they, collectively, haven’t been compiled into anything yet. It makes you think more about using unique identifiers, like integer IDs, to account for relationships, as opposed to assuming you can rely on the output object of any given table (for example, I changed the list of ‘People’ with access from the Room table to be a list of ‘PersonID’s instead. These also correspond to an entry from the Person table, but would make it possible to JOIN the tables later).
+
+
+
+3.
+
+In my opinion, I don’t know that the .NET Identity framework would lead me to lessen any of the tables I have planned, as I think user types such as Student or Professor would still need much of the data we’ve been keeping track of so far to stay attached to them. It sounds to me like the .NET framework would largely be used, in these two cases, to help with security and access; which I never had an answer for in the past, so I plan to use it on top of the existing framework I had in mind.
+
+Where I do see it playing a more prominent role, however, is in the Admin entry. The Admin never had defined relationships to other tables the way the Student and Professor linked up to classes and departments, so as such, I hadn’t even begun to address how a table for that role type would look. I now think that the Admin entry is going to be defined by a lot of the measures that the .NET Identity framework puts in place, since their entire makeup hinges upon their ability to access, and even alter, the existing tables.
