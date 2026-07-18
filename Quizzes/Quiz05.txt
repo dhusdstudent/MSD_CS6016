@@ -1,0 +1,22 @@
+Question 1:
+
+I don't think it would be safe to implement these two snippets of code without wrapping them in a transaction. My primary justification is that both of the actions need to happen to create the desired outcome. If, for some reason, the first snippet runs but the second does not, then the car's entry has been deleted from 'available' while not being added to 'loaned' - and now the car is in limbo. The opposite could also happen, where it's added to 'loaned' but never deleted from 'available'. 
+
+Question 2:
+I would still say yes, in part for the same reason as above, but also because, without safeguarding against two users trying to rent the same car, there could be a disconnect between the two tables. If Jack and Jill are trying to rent the same car at the same time, I presume an error could result into the same car being added to the 'loaned' table under both of their names. Then, if I we are to assume that there's a reverse command somewhere for when a user 'unloans' a car (thereby removing it from the 'loaned' table and putting it back into 'available') it could result in a duplicate entry there, as though you have two cars of the same make/model, when it's just the one.
+
+Question 3:
+The LINQ version should work correctly because it waits for the changes to 'catch up' to one another before locking them in. Hence the scenario I described in Question 1 won't happen, because the car won't be deleted from the 'available' table in advance of adding it to the 'loaned' table (and vice versa). The two actions should happen simultaneously.
+
+Question 4:
+The snippet of code is checking the capacity of a certain course (searching via its course ID). If the course is full (or rather, if the capacity is less than 1) then nothing happens. If the course isn't full, a user's identification credentials are being added, alongside the course information, into a table which tracks enrollment (presumably for all classes). The course in question then has its capacity decreased by one to account for the newly enrolled student. 
+
+Question 5:
+From customer: email
+From newsletter: id, name
+From author: email
+From subscription: email, id
+From writesfor: id, email
+
+Question 6:
+Under the presumption that every newsletter has a consistent author, you could add an 'author' index to the newsletter table. That way, when you want to know what newsletters John Doe writes for, you could pull a list of the newsletters whose authors are John Doe.
