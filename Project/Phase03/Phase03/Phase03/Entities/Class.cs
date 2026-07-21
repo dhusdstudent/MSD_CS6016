@@ -11,9 +11,9 @@ public partial class Class
 
     public string? Season { get; set; }
 
-    public TimeOnly? Starttime { get; set; }
+    public DateTime? Starttime { get; set; }
 
-    public TimeOnly? Endtime { get; set; }
+    public DateTime? Endtime { get; set; }
 
     public int Classid { get; set; }
 

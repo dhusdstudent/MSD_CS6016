@@ -7,7 +7,7 @@ public partial class Course
 {
     public string? Coursename { get; set; }
 
-    public string Catalogid { get; set; } = null!;
+    public int Catalogid { get; set; } = 0!;
 
     public string Coursenum { get; set; } = null!;
 

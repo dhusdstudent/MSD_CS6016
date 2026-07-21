@@ -7,7 +7,13 @@ public partial class Enrollment
 {
     public string Userid { get; set; } = null!;
 
+    public string Subject { get; set; }
+    
     public int Classid { get; set; }
+    
+    public string Semester { get; set; }
+    
+    public short Year { get; set; }
 
     public string? Grade { get; set; }
 
